@@ -14,11 +14,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with:
-          node-version: '18'
-          cache: 'npm'
+          python-version: '3.x'
+
+      - name: Install PyYAML
+        run: pip install PyYAML
 
       - name: Verify course files
         uses: LibreLingo/course-ci@main

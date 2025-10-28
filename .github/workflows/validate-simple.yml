@@ -1,0 +1,132 @@
+name: Simple Course Validation
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install PyYAML
+      run: pip install PyYAML
+
+    - name: Validate all course files
+      run: |
+        python3 << 'EOF'
+        import yaml
+        import os
+        import sys
+
+        def validate_course():
+            print("🔍 Validating LibreLingo course structure...")
+
+            # Check main course.yaml
+            course_file = './course/course.yaml'
+            if not os.path.exists(course_file):
+                print("❌ Missing course.yaml")
+                return False
+
+            try:
+                with open(course_file, 'r') as f:
+                    course = yaml.safe_load(f)
+
+                # Check required sections
+                required_sections = ['Course', 'Modules']
+                for section in required_sections:
+                    if section not in course:
+                        print(f"❌ Missing required section: {section}")
+                        return False
+
+                print("✅ Main course.yaml is valid")
+
+                # Check modules
+                modules = course.get('Modules', [])
+                for module in modules:
+                    module_path = f'./course/{module}'
+                    module_file = f'{module_path}module.yaml'
+
+                    if not os.path.exists(module_file):
+                        print(f"❌ Missing module file: {module_file}")
+                        return False
+
+                    with open(module_file, 'r') as f:
+                        module_data = yaml.safe_load(f)
+
+                    if 'Skills' not in module_data:
+                        print(f"❌ Module {module} missing Skills section")
+                        return False
+
+                    print(f"✅ Module {module} is valid")
+
+                    # Check skills
+                    skills = module_data.get('Skills', [])
+                    for skill in skills:
+                        skill_file = f'{module_path}skills/{skill}'
+                        if not os.path.exists(skill_file):
+                            print(f"❌ Missing skill file: {skill_file}")
+                            return False
+
+                        with open(skill_file, 'r') as f:
+                            skill_data = yaml.safe_load(f)
+
+                        # Validate skill structure
+                        if 'Skill' not in skill_data:
+                            print(f"❌ Skill {skill} missing Skill section")
+                            return False
+
+                        skill_info = skill_data['Skill']
+                        if 'Name' not in skill_info or 'Id' not in skill_info:
+                            print(f"❌ Skill {skill} missing required fields")
+                            return False
+
+                        if 'New Words' not in skill_data:
+                            print(f"❌ Skill {skill} missing New Words section")
+                            return False
+
+                        words = skill_data['New Words']
+                        if not isinstance(words, list):
+                            print(f"❌ Skill {skill} New Words must be a list")
+                            return False
+
+                        # Validate each word
+                        for i, word in enumerate(words):
+                            if not isinstance(word, dict):
+                                print(f"❌ Skill {skill} word {i} must be a dictionary")
+                                return False
+                            if 'Word' not in word or 'Translation' not in word:
+                                print(f"❌ Skill {skill} word {i} missing required fields")
+                                return False
+
+                        print(f"  ✅ Skill {skill} is valid")
+
+                print("🎉 Course validation successful!")
+                return True
+
+            except Exception as e:
+                print(f"❌ Error during validation: {e}")
+                return False
+
+        success = validate_course()
+        if not success:
+            sys.exit(1)
+        EOF
+
+    - name: Count course statistics
+      run: |
+        echo "📊 Course Statistics:"
+        echo "Total YAML files: $(find ./course -name '*.yaml' | wc -l)"
+        echo "Total modules: $(find ./course -name 'module.yaml' | wc -l)"
+        echo "Total skills: $(find ./course -name 'skills/*.yaml' | wc -l)"
+        echo "Total words: $(grep -r 'Word:' ./course | wc -l)"
