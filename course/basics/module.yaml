@@ -1,0 +1,13 @@
+Module:
+  Name: "Basics"
+
+Skills:
+  - greetings.yaml
+  - numbers.yaml
+  - family.yaml
+  - food.yaml
+  - pronunciation.yaml
+  - phrases.yaml
+  - time.yaml
+  - travel.yaml
+  - shopping.yaml

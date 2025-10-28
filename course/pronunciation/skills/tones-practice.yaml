@@ -1,0 +1,55 @@
+Skill:
+  Name: Tones Practice
+  Id: 16
+
+New Words:
+  - Word: 妈
+    Translation: Mother
+    Pronunciation: mā
+    Tone: 1st tone (high level)
+    Tone_mark: ¯
+    Example: High and flat tone like singing "la"
+  - Word: 麻
+    Translation: Hemp
+    Pronunciation: má
+    Tone: 2nd tone (rising)
+    Tone_mark: ´
+    Example: Rising tone like asking "what?"
+  - Word: 马
+    Translation: Horse
+    Pronunciation: mǎ
+    Tone: 3rd tone (falling-rising)
+    Tone_mark: ˇ
+    Example: Falls then rises like "uh-uh"
+  - Word: 骂
+    Translation: To scold
+    Pronunciation: mà
+    Tone: 4th tone (falling)
+    Tone_mark: `
+    Example: Sharp falling tone like "hey!"
+  - Word: 吗
+    Translation: Question particle
+    Pronunciation: ma
+    Tone: Neutral tone
+    Tone_mark: none
+    Example: Light and short, unstressed
+  - Word: tā
+    Translation: He/she/it
+    Pronunciation: tā
+    Tone: 1st tone
+    Tone_mark: ā
+  - Word: tà
+    Translation: Step on
+    Pronunciation: tà
+    Tone: 4th tone
+    Tone_mark: à
+  - Word: yī
+    Translation: One
+    Pronunciation: yī
+    Tone: 1st tone (changes to 2nd before 4th tone)
+    Tone_rule: Changes to yí before 4th tone
+  - Word: bù
+    Translation: Not
+    Pronunciation: bù
+    Tone: 4th tone (changes to 2nd before 4th tone)
+    Tone_rule: Changes to bú before 4th tone

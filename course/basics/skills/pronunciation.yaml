@@ -1,0 +1,53 @@
+Skill:
+  Name: Pronunciation Basics
+  Id: 5
+
+New Words:
+  - Word: 妈妈
+    Translation: Mother
+    Pronunciation: mā ma
+    Tone: 1st tone (high level)
+  - Word: 麻
+    Translation: Hemp
+    Pronunciation: má
+    Tone: 2nd tone (rising)
+  - Word: 马
+    Translation: Horse
+    Pronunciation: mǎ
+    Tone: 3rd tone (falling-rising)
+  - Word: 骂
+    Translation: To scold
+    Pronunciation: mà
+    Tone: 4th tone (falling)
+  - Word: 吗
+    Translation: Question particle
+    Pronunciation: ma
+    Tone: Neutral tone
+  - Word: 是
+    Translation: To be
+    Pronunciation: shì
+    Tone: 4th tone
+  - Word: 四
+    Translation: Four
+    Pronunciation: sì
+    Tone: 4th tone
+  - Word: 十
+    Translation: Ten
+    Pronunciation: shí
+    Tone: 2nd tone
+  - Word: 不
+    Translation: No/not
+    Pronunciation: bù
+    Tone: 4th tone (changes to 2nd tone before 4th tone)
+  - Word: 一
+    Translation: One
+    Pronunciation: yī
+    Tone: 1st tone (changes to 2nd tone before 4th tone)
+  - Word: 七
+    Translation: Seven
+    Pronunciation: qī
+    Tone: 1st tone
+  - Word: 八
+    Translation: Eight
+    Pronunciation: bā
+    Tone: 1st tone

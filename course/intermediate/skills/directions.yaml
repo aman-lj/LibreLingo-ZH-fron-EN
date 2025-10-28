@@ -1,0 +1,50 @@
+Skill:
+  Name: Directions
+  Id: 14
+
+New Words:
+  - Word: 左边
+    Translation: Left side
+    Pronunciation: zuǒ biān
+  - Word: 右边
+    Translation: Right side
+    Pronunciation: yòu biān
+  - Word: 前面
+    Translation: Front
+    Pronunciation: qián miàn
+  - Word: 后面
+    Translation: Back
+    Pronunciation: hòu miàn
+  - Word: 上面
+    Translation: Above/on top
+    Pronunciation: shàng miàn
+  - Word: 下面
+    Translation: Below/under
+    Pronunciation: xià miàn
+  - Word: 里面
+    Translation: Inside
+    Pronunciation: lǐ miàn
+  - Word: 外面
+    Translation: Outside
+    Pronunciation: wài miàn
+  - Word: 东
+    Translation: East
+    Pronunciation: dōng
+  - Word: 南
+    Translation: South
+    Pronunciation: nán
+  - Word: 西
+    Translation: West
+    Pronunciation: xī
+  - Word: 北
+    Translation: North
+    Pronunciation: běi
+  - Word: 直走
+    Translation: Go straight
+    Pronunciation: zhí zǒu
+  - Word: 转弯
+    Translation: To turn
+    Pronunciation: zhuǎn wān
+  - Word: 停
+    Translation: To stop
+    Pronunciation: tíng

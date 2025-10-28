@@ -1,0 +1,59 @@
+Skill:
+  Name: Pinyin Basics
+  Id: 15
+
+New Words:
+  - Word: a
+    Translation: Vowel sound 'a'
+    Pronunciation: ā
+    Pinyin: a (vowel)
+    Description: Open front unrounded vowel
+  - Word: o
+    Translation: Vowel sound 'o'
+    Pronunciation: ō
+    Pinyin: o (vowel)
+    Description: Back rounded vowel
+  - Word: e
+    Translation: Vowel sound 'e'
+    Pronunciation: ē
+    Pinyin: e (vowel)
+    Description: Mid central vowel
+  - Word: i
+    Translation: Vowel sound 'i'
+    Pronunciation: ī
+    Pinyin: i (vowel)
+    Description: Close front unrounded vowel
+  - Word: u
+    Translation: Vowel sound 'u'
+    Pronunciation: ū
+    Pinyin: u (vowel)
+    Description: Close back rounded vowel
+  - Word: ü
+    Translation: Vowel sound 'ü'
+    Pronunciation: ǖ
+    Pinyin: ü (vowel)
+    Description: Close front rounded vowel
+  - Word: ba
+    Translation: Syllable 'ba'
+    Pronunciation: bā
+    Pinyin: ba (consonant + vowel)
+    Initial: b
+    Final: a
+  - Word: pa
+    Translation: Syllable 'pa'
+    Pronunciation: pā
+    Pinyin: pa (aspirated + vowel)
+    Initial: p (aspirated)
+    Final: a
+  - Word: ma
+    Translation: Syllable 'ma'
+    Pronunciation: mā
+    Pinyin: ma (nasal + vowel)
+    Initial: m (nasal)
+    Final: a
+  - Word: fa
+    Translation: Syllable 'fa'
+    Pronunciation: fā
+    Pinyin: fa (fricative + vowel)
+    Initial: f (fricative)
+    Final: a

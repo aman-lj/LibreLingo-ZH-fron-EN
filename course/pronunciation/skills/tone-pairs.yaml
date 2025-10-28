@@ -1,0 +1,51 @@
+Skill:
+  Name: Tone Pairs
+  Id: 18
+
+New Words:
+  - Word: 中文
+    Translation: Chinese language
+    Pronunciation: Zhōng wén
+    Tones: 1st + 2nd
+    Pattern: High level + Rising
+  - Word: 你好
+    Translation: Hello
+    Pronunciation: nǐ hǎo
+    Tones: 3rd + 3rd
+    Pattern: Falling-rising + Falling-rising (changes to 2nd + 3rd: ní hǎo)
+    Tone_rule: Two 3rd tones become 2nd + 3rd
+  - Word: 喜欢
+    Translation: To like
+    Pronunciation: xǐ huān
+    Tones: 3rd + 1st
+    Pattern: Falling-rising + High level
+  - Word: 买东西
+    Translation: To buy things
+    Pronunciation: mǎi dōng xi
+    Tones: 3rd + 1st + neutral
+    Pattern: Falling-rising + High level + Neutral
+  - Word: 北京
+    Translation: Beijing
+    Pronunciation: Běi jīng
+    Tones: 3rd + 1st
+    Pattern: Falling-rising + High level
+  - Word: 上海
+    Translation: Shanghai
+    Pronunciation: Shàng hǎi
+    Tones: 4th + 3rd
+    Pattern: Falling + Falling-rising
+  - Word: 老师
+    Translation: Teacher
+    Pronunciation: lǎo shī
+    Tones: 3rd + 1st
+    Pattern: Falling-rising + High level
+  - Word: 学生
+    Translation: Student
+    Pronunciation: xué shēng
+    Tones: 2nd + 1st
+    Pattern: Rising + High level
+  - Word: 漂亮
+    Translation: Beautiful
+    Pronunciation: piào liang
+    Tones: 4th + neutral
+    Pattern: Falling + Neutral

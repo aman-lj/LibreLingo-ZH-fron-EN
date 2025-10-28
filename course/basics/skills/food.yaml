@@ -1,0 +1,47 @@
+Skill:
+  Name: Food & Drinks
+  Id: 4
+
+New Words:
+  - Word: 米饭
+    Translation: Rice
+    Pronunciation: mǐ fàn
+  - Word: 水
+    Translation: Water
+    Pronunciation: shuǐ
+  - Word: 茶
+    Translation: Tea
+    Pronunciation: chá
+  - Word: 咖啡
+    Translation: Coffee
+    Pronunciation: kā fēi
+  - Word: 面条
+    Translation: Noodles
+    Pronunciation: miàn tiáo
+  - Word: 包子
+    Translation: Steamed bun
+    Pronunciation: bāo zi
+  - Word: 饺子
+    Translation: Dumplings
+    Pronunciation: jiǎo zi
+  - Word: 鸡蛋
+    Translation: Egg
+    Pronunciation: jī dàn
+  - Word: 牛奶
+    Translation: Milk
+    Pronunciation: niú nǎi
+  - Word: 面包
+    Translation: Bread
+    Pronunciation: miàn bāo
+  - Word: 水果
+    Translation: Fruit
+    Pronunciation: shuǐ guǒ
+  - Word: 苹果
+    Translation: Apple
+    Pronunciation: píng guǒ
+  - Word: 香蕉
+    Translation: Banana
+    Pronunciation: xiāng jiāo
+  - Word: 橙子
+    Translation: Orange
+    Pronunciation: chéng zi

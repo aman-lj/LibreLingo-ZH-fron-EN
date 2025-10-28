@@ -1,0 +1,50 @@
+Skill:
+  Name: Numbers
+  Id: 2
+
+New Words:
+  - Word: 一
+    Translation: One
+    Pronunciation: yī
+  - Word: 二
+    Translation: Two
+    Pronunciation: èr
+  - Word: 三
+    Translation: Three
+    Pronunciation: sān
+  - Word: 四
+    Translation: Four
+    Pronunciation: sì
+  - Word: 五
+    Translation: Five
+    Pronunciation: wǔ
+  - Word: 六
+    Translation: Six
+    Pronunciation: liù
+  - Word: 七
+    Translation: Seven
+    Pronunciation: qī
+  - Word: 八
+    Translation: Eight
+    Pronunciation: bā
+  - Word: 九
+    Translation: Nine
+    Pronunciation: jiǔ
+  - Word: 十
+    Translation: Ten
+    Pronunciation: shí
+  - Word: 百
+    Translation: Hundred
+    Pronunciation: bǎi
+  - Word: 千
+    Translation: Thousand
+    Pronunciation: qiān
+  - Word: 万
+    Translation: Ten thousand
+    Pronunciation: wàn
+  - Word: 零
+    Translation: Zero
+    Pronunciation: líng
+  - Word: 几
+    Translation: How many
+    Pronunciation: jǐ

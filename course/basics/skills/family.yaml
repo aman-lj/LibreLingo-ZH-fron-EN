@@ -1,0 +1,44 @@
+Skill:
+  Name: Family
+  Id: 3
+
+New Words:
+  - Word: 家人
+    Translation: Family
+    Pronunciation: jiā rén
+  - Word: 爸爸
+    Translation: Father
+    Pronunciation: bà ba
+  - Word: 妈妈
+    Translation: Mother
+    Pronunciation: mā ma
+  - Word: 哥哥
+    Translation: Older brother
+    Pronunciation: gē ge
+  - Word: 姐姐
+    Translation: Older sister
+    Pronunciation: jiě jie
+  - Word: 弟弟
+    Translation: Younger brother
+    Pronunciation: dì di
+  - Word: 妹妹
+    Translation: Younger sister
+    Pronunciation: mèi mei
+  - Word: 爷爷
+    Translation: Grandfather (paternal)
+    Pronunciation: yé ye
+  - Word: 奶奶
+    Translation: Grandmother (paternal)
+    Pronunciation: nǎi nai
+  - Word: 外公
+    Translation: Grandfather (maternal)
+    Pronunciation: wài gōng
+  - Word: 外婆
+    Translation: Grandmother (maternal)
+    Pronunciation: wài pó
+  - Word: 儿子
+    Translation: Son
+    Pronunciation: ér zi
+  - Word: 女儿
+    Translation: Daughter
+    Pronunciation: nǚ'ér

@@ -1,0 +1,53 @@
+Skill:
+  Name: Difficult Sounds
+  Id: 17
+
+New Words:
+  - Word: 四
+    Translation: Four
+    Pronunciation: sì
+    Sound: s (unvoiced alveolar fricative)
+    Common_error: Often confused with sh
+    Practice_tip: Keep tongue tip behind teeth
+  - Word: 十
+    Translation: Ten
+    Pronunciation: shí
+    Sound: sh (unvoiced retroflex fricative)
+    Common_error: Often confused with s
+    Practice_tip: Curl tongue back slightly
+  - Word: 知
+    Translation: To know
+    Pronunciation: zhī
+    Sound: zh (unvoiced retroflex affricate)
+    Common_error: Often confused with z
+    Practice_tip: Curl tongue back, add 'zh' sound
+  - Word: 字
+    Translation: Character/word
+    Pronunciation: zì
+    Sound: z (unvoiced alveolar affricate)
+    Common_error: Often confused with zh
+    Practice_tip: Keep tongue tip behind teeth
+  - Word: 吃
+    Translation: To eat
+    Pronunciation: chī
+    Sound: ch (unvoiced retroflex affricate, aspirated)
+    Common_error: Often confused with c
+    Practice_tip: Retroflex with strong puff of air
+  - Word: 次
+    Translation: Time/occasion
+    Pronunciation: cì
+    Sound: c (unvoiced alveolar affricate, aspirated)
+    Common_error: Often confused with ch
+    Practice_tip: Alveolar with strong puff of air
+  - Word: 日
+    Translation: Sun/day
+    Pronunciation: rì
+    Sound: r (voiced retroflex fricative)
+    Common_error: Often confused with English 'r'
+    Practice_tip: Different from English r, curl tongue
+  - Word: 二
+    Translation: Two
+    Pronunciation: èr
+    Sound: r (retroflex approximant)
+    Common_error: Difficult for English speakers
+    Practice_tip: Tongue curled back, no friction

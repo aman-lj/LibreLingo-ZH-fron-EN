@@ -1,0 +1,41 @@
+Skill:
+  Name: Basic Grammar
+  Id: 10
+
+New Words:
+  - Word: 的
+    Translation: Possessive particle (de)
+    Pronunciation: de
+  - Word: 了
+    Translation: Past tense particle (le)
+    Pronunciation: le
+  - Word: 吗
+    Translation: Question particle (ma)
+    Pronunciation: ma
+  - Word: 呢
+    Translation: Follow-up question particle (ne)
+    Pronunciation: ne
+  - Word: 把
+    Translation: Disposal particle (bǎ)
+    Pronunciation: bǎ
+  - Word: 被
+    Translation: Passive particle (bèi)
+    Pronunciation: bèi
+  - Word: 在
+    Translation: At/in (preposition) (zài)
+    Pronunciation: zài
+  - Word: 和
+    Translation: And (hé)
+    Pronunciation: hé
+  - Word: 还是
+    Translation: Or (háishì)
+    Pronunciation: hái shì
+  - Word: 但是
+    Translation: But (dànshì)
+    Pronunciation: dàn shì
+  - Word: 因为
+    Translation: Because (yīnwèi)
+    Pronunciation: yīn wèi
+  - Word: 所以
+    Translation: So/therefore (suǒyǐ)
+    Pronunciation: suǒ yǐ

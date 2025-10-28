@@ -1,0 +1,8 @@
+Module:
+  Name: "Pronunciation & Tones"
+
+Skills:
+  - pinyin-basics.yaml
+  - tones-practice.yaml
+  - difficult-sounds.yaml
+  - tone-pairs.yaml

@@ -1,0 +1,47 @@
+Skill:
+  Name: Travel
+  Id: 8
+
+New Words:
+  - Word: 飞机
+    Translation: Airplane
+    Pronunciation: fēi jī
+  - Word: 火车
+    Translation: Train
+    Pronunciation: huǒ chē
+  - Word: 汽车
+    Translation: Car
+    Pronunciation: qì chē
+  - Word: 地铁
+    Translation: Subway
+    Pronunciation: dì tiě
+  - Word: 公交车
+    Translation: Bus
+    Pronunciation: gōng jiāo chē
+  - Word: 机场
+    Translation: Airport
+    Pronunciation: jī chǎng
+  - Word: 火车站
+    Translation: Train station
+    Pronunciation: huǒ chē zhàn
+  - Word: 酒店
+    Translation: Hotel
+    Pronunciation: jiǔ diàn
+  - Word: 房间
+    Translation: Room
+    Pronunciation: fáng jiān
+  - Word: 票
+    Translation: Ticket
+    Pronunciation: piào
+  - Word: 护照
+    Translation: Passport
+    Pronunciation: hù zhào
+  - Word: 行李
+    Translation: Luggage
+    Pronunciation: xíng li
+  - Word: 出口
+    Translation: Exit
+    Pronunciation: chū kǒu
+  - Word: 入口
+    Translation: Entrance
+    Pronunciation: rù kǒu

@@ -1,0 +1,47 @@
+Skill:
+  Name: Greetings
+  Id: 1
+
+New Words:
+  - Word: 你好
+    Translation: Hello
+    Pronunciation: nǐ hǎo
+  - Word: 早上好
+    Translation: Good morning
+    Pronunciation: zǎo shang hǎo
+  - Word: 晚上好
+    Translation: Good evening
+    Pronunciation: wǎn shang hǎo
+  - Word: 再见
+    Translation: Goodbye
+    Pronunciation: zài jiàn
+  - Word: 请
+    Translation: Please
+    Pronunciation: qǐng
+  - Word: 谢谢
+    Translation: Thank you
+    Pronunciation: xiè xie
+  - Word: 对不起
+    Translation: Sorry
+    Pronunciation: duì bu qǐ
+  - Word: 没关系
+    Translation: It's okay
+    Pronunciation: méi guān xi
+  - Word: 下午好
+    Translation: Good afternoon
+    Pronunciation: xià wǔ hǎo
+  - Word: 晚安
+    Translation: Good night
+    Pronunciation: wǎn ān
+  - Word: 欢迎
+    Translation: Welcome
+    Pronunciation: huān yíng
+  - Word: 不客气
+    Translation: You're welcome
+    Pronunciation: bú kè qi
+  - Word: 是的
+    Translation: Yes
+    Pronunciation: shì de
+  - Word: 不是
+    Translation: No
+    Pronunciation: bú shì

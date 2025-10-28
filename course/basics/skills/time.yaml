@@ -1,0 +1,83 @@
+Skill:
+  Name: Time & Date
+  Id: 7
+
+New Words:
+  - Word: 今天
+    Translation: Today
+    Pronunciation: jīn tiān
+  - Word: 昨天
+    Translation: Yesterday
+    Pronunciation: zuó tiān
+  - Word: 明天
+    Translation: Tomorrow
+    Pronunciation: míng tiān
+  - Word: 现在
+    Translation: Now
+    Pronunciation: xiàn zài
+  - Word: 早上
+    Translation: Morning
+    Pronunciation: zǎo shang
+  - Word: 中午
+    Translation: Noon
+    Pronunciation: zhōng wǔ
+  - Word: 晚上
+    Translation: Evening
+    Pronunciation: wǎn shang
+  - Word: 星期一
+    Translation: Monday
+    Pronunciation: xīng qī yī
+  - Word: 星期二
+    Translation: Tuesday
+    Pronunciation: xīng qī èr
+  - Word: 星期三
+    Translation: Wednesday
+    Pronunciation: xīng qī sān
+  - Word: 星期四
+    Translation: Thursday
+    Pronunciation: xīng qī sì
+  - Word: 星期五
+    Translation: Friday
+    Pronunciation: xīng qī wǔ
+  - Word: 星期六
+    Translation: Saturday
+    Pronunciation: xīng qī liù
+  - Word: 星期日
+    Translation: Sunday
+    Pronunciation: xīng qī rì
+  - Word: 一月
+    Translation: January
+    Pronunciation: yī yuè
+  - Word: 二月
+    Translation: February
+    Pronunciation: èr yuè
+  - Word: 三月
+    Translation: March
+    Pronunciation: sān yuè
+  - Word: 四月
+    Translation: April
+    Pronunciation: sì yuè
+  - Word: 五月
+    Translation: May
+    Pronunciation: wǔ yuè
+  - Word: 六月
+    Translation: June
+    Pronunciation: liù yuè
+  - Word: 七月
+    Translation: July
+    Pronunciation: qī yuè
+  - Word: 八月
+    Translation: August
+    Pronunciation: bā yuè
+  - Word: 九月
+    Translation: September
+    Pronunciation: jiǔ yuè
+  - Word: 十月
+    Translation: October
+    Pronunciation: shí yuè
+  - Word: 十一月
+    Translation: November
+    Pronunciation: shí yī yuè
+  - Word: 十二月
+    Translation: December
+    Pronunciation: shí èr yuè
