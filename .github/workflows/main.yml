@@ -1,9 +1,30 @@
-on: [push]
+name: Verify Course
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
 
 jobs:
   verify-course:
     runs-on: ubuntu-latest
-    name: Verify course
+    name: Verify course structure and syntax
+
     steps:
-      - uses: actions/checkout@v2
-      - uses: LibreLingo/course-ci@main
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Verify course files
+        uses: LibreLingo/course-ci@main
+        with:
+          course-path: ./course
+
+      - name: Check YAML syntax
+        run: |
+          find ./course -name "*.yaml" -o -name "*.yml" | xargs -I {} sh -c 'echo "Checking {}" && python3 -c "import yaml; yaml.safe_load(open(\"{}\"))"'
