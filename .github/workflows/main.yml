@@ -6,27 +6,133 @@ permissions:
   contents: read
 
 jobs:
-  verify-course:
+  validate-course:
     runs-on: ubuntu-latest
-    name: Verify course structure and syntax
+    name: Validate course structure and syntax
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Python
+      - name: Setup Python 3.11
         uses: actions/setup-python@v4
         with:
-          python-version: '3.x'
+          python-version: '3.11'
 
       - name: Install PyYAML
         run: pip install PyYAML
 
-      - name: Verify course files
-        uses: LibreLingo/course-ci@main
-        with:
-          course-path: ./course
-
-      - name: Check YAML syntax
+      - name: Validate YAML files
         run: |
-          find ./course -name "*.yaml" -o -name "*.yml" | xargs -I {} sh -c 'echo "Checking {}" && python3 -c "import yaml; yaml.safe_load(open(\"{}\"))"'
+          python3 << 'EOF'
+          import yaml
+          import os
+          import sys
+
+          def validate_yaml_files(directory):
+              errors = []
+              valid_files = []
+
+              for root, dirs, files in os.walk(directory):
+                  for file in files:
+                      if file.endswith(('.yaml', '.yml')):
+                          file_path = os.path.join(root, file)
+                          try:
+                              with open(file_path, 'r', encoding='utf-8') as f:
+                                  yaml.safe_load(f)
+                              valid_files.append(file_path)
+                              print(f"✅ Valid: {file_path}")
+                          except yaml.YAMLError as e:
+                              errors.append(f"❌ YAML Error in {file_path}: {e}")
+                          except Exception as e:
+                              errors.append(f"❌ Error in {file_path}: {e}")
+
+              return valid_files, errors
+
+          print("Validating YAML files...")
+          valid, errors = validate_yaml_files('./course')
+
+          print(f"\n📊 Summary:")
+          print(f"✅ Valid files: {len(valid)}")
+          print(f"❌ Errors: {len(errors)}")
+
+          if errors:
+              print("\n🚨 Errors found:")
+              for error in errors:
+                  print(error)
+              sys.exit(1)
+          else:
+              print("\n🎉 All YAML files are valid!")
+          EOF
+
+      - name: Validate course structure
+        run: |
+          python3 << 'EOF'
+          import yaml
+          import os
+          import sys
+
+          def check_course_structure():
+              print("🔍 Checking LibreLingo course structure...")
+              errors = []
+
+              # Check main course.yaml
+              course_file = './course/course.yaml'
+              if not os.path.exists(course_file):
+                  errors.append("Missing course.yaml")
+                  return errors
+
+              with open(course_file, 'r') as f:
+                  course = yaml.safe_load(f)
+
+              # Check required sections
+              required_sections = ['Course', 'Modules']
+              for section in required_sections:
+                  if section not in course:
+                      errors.append(f"Missing required section: {section}")
+
+              # Check modules exist and have module.yaml
+              if 'Modules' in course:
+                  for module in course['Modules']:
+                      module_path = f'./course/{module}'
+                      module_file = f'{module_path}module.yaml'
+
+                      if not os.path.exists(module_file):
+                          errors.append(f"Missing module file: {module_file}")
+                      else:
+                          # Check skills in module
+                          try:
+                              with open(module_file, 'r') as f:
+                                  module_data = yaml.safe_load(f)
+
+                              if 'Skills' in module_data:
+                                  for skill in module_data['Skills']:
+                                      skill_file = f'{module_path}skills/{skill}'
+                                      if not os.path.exists(skill_file):
+                                          errors.append(f"Missing skill file: {skill_file}")
+                          except Exception as e:
+                              errors.append(f"Error reading module {module_file}: {e}")
+
+              return errors
+
+          errors = check_course_structure()
+
+          if errors:
+              print("🚨 Structure errors found:")
+              for error in errors:
+                  print(f"❌ {error}")
+              sys.exit(1)
+          else:
+              print("🎉 Course structure is valid!")
+          EOF
+
+      - name: Generate course statistics
+        run: |
+          echo "📊 Course Statistics:"
+          echo "Total YAML files: $(find ./course -name '*.yaml' | wc -l)"
+          echo "Total modules: $(find ./course -name 'module.yaml' | wc -l)"
+          echo "Total skills: $(find ./course -path '*/skills/*.yaml' | wc -l)"
+          echo "Total words: $(grep -r 'Word:' ./course | wc -l)"
+          echo ""
+          echo "📁 Course structure:"
+          find ./course -name "*.yaml" | sort

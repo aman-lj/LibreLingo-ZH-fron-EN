@@ -1,0 +1,164 @@
+name: Basic Course Validation
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  basic-validation:
+    runs-on: ubuntu-latest
+    name: Basic Course Validation
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install PyYAML
+      run: pip install PyYAML
+
+    - name: Run comprehensive validation
+      run: |
+        python3 -c "
+        import yaml
+        import os
+        import sys
+
+        def validate_course():
+            print('🚀 Starting LibreLingo course validation...')
+
+            # Check if course directory exists
+            if not os.path.exists('./course'):
+                print('❌ Course directory not found')
+                return False
+
+            # Validate main course.yaml
+            try:
+                with open('./course/course.yaml', 'r') as f:
+                    course_config = yaml.safe_load(f)
+
+                required_keys = ['Course', 'Modules']
+                for key in required_keys:
+                    if key not in course_config:
+                        print(f'❌ Missing required key in course.yaml: {key}')
+                        return False
+
+                print('✅ course.yaml is valid')
+            except Exception as e:
+                print(f'❌ Error validating course.yaml: {e}')
+                return False
+
+            # Validate modules and skills
+            total_skills = 0
+            total_words = 0
+
+            for module_dir in course_config['Modules']:
+                module_path = f'./course/{module_dir}'
+                module_file = f'{module_path}module.yaml'
+
+                # Check module file exists
+                if not os.path.exists(module_file):
+                    print(f'❌ Missing module file: {module_file}')
+                    return False
+
+                # Validate module structure
+                try:
+                    with open(module_file, 'r') as f:
+                        module_config = yaml.safe_load(f)
+
+                    if 'Skills' not in module_config:
+                        print(f'❌ Module {module_dir} missing Skills section')
+                        return False
+
+                    print(f'✅ Module {module_dir} is valid')
+
+                    # Validate each skill
+                    for skill_file in module_config['Skills']:
+                        skill_path = f'{module_path}skills/{skill_file}'
+
+                        if not os.path.exists(skill_path):
+                            print(f'❌ Missing skill file: {skill_path}')
+                            return False
+
+                        # Validate skill structure
+                        with open(skill_path, 'r') as f:
+                            skill_data = yaml.safe_load(f)
+
+                        # Check required sections
+                        if 'Skill' not in skill_data:
+                            print(f'❌ Skill {skill_file} missing Skill section')
+                            return False
+
+                        skill_info = skill_data['Skill']
+                        if 'Name' not in skill_info or 'Id' not in skill_info:
+                            print(f'❌ Skill {skill_file} missing required fields')
+                            return False
+
+                        if 'New Words' not in skill_data:
+                            print(f'❌ Skill {skill_file} missing New Words section')
+                            return False
+
+                        words = skill_data['New Words']
+                        if not isinstance(words, list):
+                            print(f'❌ Skill {skill_file} New Words must be a list')
+                            return False
+
+                        # Validate each word
+                        for i, word in enumerate(words):
+                            if not isinstance(word, dict):
+                                print(f'❌ Skill {skill_file} word {i} must be a dictionary')
+                                return False
+                            if 'Word' not in word or 'Translation' not in word:
+                                print(f'❌ Skill {skill_file} word {i} missing required fields')
+                                return False
+
+                        total_skills += 1
+                        total_words += len(words)
+
+                    print(f'  ✅ Validated {len(module_config[\"Skills\"])} skills in {module_dir}')
+
+                except Exception as e:
+                    print(f'❌ Error validating module {module_dir}: {e}')
+                    return False
+
+            # Print summary
+            print(f'\\n🎉 Course validation successful!')
+            print(f'📊 Summary:')
+            print(f'  Modules: {len(course_config[\"Modules\"])}')
+            print(f'  Skills: {total_skills}')
+            print(f'  Words: {total_words}')
+            print(f'  YAML files: {len([f for r, d, fs in os.walk(\"./course\") for f in fs if f.endswith(\".yaml\")])}')
+
+            return True
+
+        success = validate_course()
+        if not success:
+            sys.exit(1)
+        "
+
+    - name: Check file encoding
+      run: |
+        echo "🔍 Checking file encoding..."
+        # Check for binary files or non-text files
+        if find ./course -name "*.yaml" -exec file {} \; | grep -q -v -E "(ASCII text|Unicode text|UTF-8)"; then
+          echo "❌ Non-text or non-UTF8 files found:"
+          find ./course -name "*.yaml" -exec file {} \; | grep -v -E "(ASCII text|Unicode text|UTF-8)"
+          exit 1
+        else
+          echo "✅ All files are text encoded (ASCII/UTF-8 compatible)"
+        fi
+
+    - name: Test YAML parsing
+      run: |
+        echo "🧪 Testing YAML parsing..."
+        for file in $(find ./course -name "*.yaml"); do
+          echo "Testing $file..."
+          python3 -c "import yaml; yaml.safe_load(open('$file'))" || exit 1
+        done
+        echo "✅ All YAML files parse correctly"
